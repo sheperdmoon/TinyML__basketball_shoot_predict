@@ -70,7 +70,7 @@ def build_cnn(seq_length): # TODO[13] 修改模型
   print("Built CNN.")
   if not os.path.exists(model_path):
     os.makedirs(model_path)
-  model.load_weights("./netmodels/CNN/weights.h5")
+  #model.load_weights("./netmodels/CNN/weights.h5")
   return model, model_path
 
 
