@@ -60,7 +60,7 @@ def prepare_original_data(folder, name, data, file_to_read):  # pylint: disable=
             data_new["name"] = name
           elif line[2] != "-":
             # TODO[1] 记得*1000，因为收集数据的时候没*1000
-            data_new[DATA_NAME].append([float(i*1000) for i in line[0:3]])
+            data_new[DATA_NAME].append([float(i)*1000 for i in line[0:3]])
       data.append(data_new)
   else:
     with open(file_to_read, "r") as f:
