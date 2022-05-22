@@ -70,6 +70,7 @@ class DataLoader(object):
         # Before- Neighbour padding
         print(seq_length, " ", dim)
         print(data[0])
+        print(len(data))
         tmp_data = (np.random.rand(seq_length, dim) - 0.5) * noise_level + data[0]
 
         tmp_data[(seq_length -
