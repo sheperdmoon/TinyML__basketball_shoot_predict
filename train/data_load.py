@@ -69,6 +69,8 @@ class DataLoader(object):
         padded_data = []
         # Before- Neighbour padding
         tmp_data = (np.random.rand(seq_length, dim) - 0.5) * noise_level + data[0]
+        print(seq_length, " ",dim)
+        print(data[0])
         tmp_data[(seq_length -
                   min(len(data), seq_length)):] = data[:min(len(data), seq_length)]
         padded_data.append(tmp_data)
