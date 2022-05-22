@@ -90,9 +90,9 @@ class DataLoader(object):
         labels = np.zeros(length)
         # Get padding for train, valid and test
         for idx, (data, label) in enumerate(zip(data, label)):
-            if data == []:
-                print(label)
-                continue
+            # if data == []:
+            #     print(label)
+            #     continue
             padded_data = self.pad(data, self.seq_length, self.dim)
             for num in range(padded_num):
                 features[padded_num * idx + num] = padded_data[num]
