@@ -149,9 +149,9 @@ def write_data(data_to_write, path):
 if __name__ == "__main__":
     data = []  # pylint: disable=redefined-outer-name
     for idx1, folder in enumerate(folders):
-        for idx2, name in enumerate(names):
-            prepare_original_data(folder, name, data,
-                                  "./%s/output_%s_%s.txt" % (folder, folder, name))
+        name = names[idx1]
+        prepare_original_data(folder, name, data,
+                              "./%s/output_%s_%s.txt" % (folder, folder, name))
     for idx in range(5):
         prepare_original_data("negative", "negative%d" % (idx + 1), data,
                               "./negative/output_negative_%d.txt" % (idx + 1))
