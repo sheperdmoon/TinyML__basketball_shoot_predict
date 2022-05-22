@@ -54,17 +54,17 @@ def build_cnn(seq_length): # TODO[13] 修改模型
           8, (4, 3),
           padding="same",
           activation="relu",
-          input_shape=(seq_length, 3, 1)),  # output_shape=(batch, 200, 3, 8)
-      tf.keras.layers.MaxPool2D((3, 3)),  # (batch, 66, 1, 8)
-      tf.keras.layers.Dropout(0.1),  # (batch, 66, 1, 8)
+          input_shape=(seq_length, 3, 1)),  # output_shape=(batch, 64, 3, 8)
+      tf.keras.layers.MaxPool2D((3, 3)),  # (batch, 21, 1, 8)
+      tf.keras.layers.Dropout(0.1),  # (batch, 21, 1, 8)
       tf.keras.layers.Conv2D(16, (4, 1), padding="same",
-                             activation="relu"),  # (batch, 66, 1, 16)
+                             activation="relu"),  # (batch, 21, 1, 16)
       tf.keras.layers.MaxPool2D((3, 1), padding="same"),  # (batch, 22, 1, 16)
-      tf.keras.layers.Dropout(0.1),  # (batch, 22, 1, 16)
-      tf.keras.layers.Flatten(),  # (batch, 352)
+      tf.keras.layers.Dropout(0.1),  # (batch, 7, 1, 16)
+      tf.keras.layers.Flatten(),  # (batch, 112)
       tf.keras.layers.Dense(16, activation="relu"),  # (batch, 16)
       tf.keras.layers.Dropout(0.1),  # (batch, 16)
-      tf.keras.layers.Dense(6, activation="softmax")  # (batch, 4)
+      tf.keras.layers.Dense(6, activation="softmax")  # (batch, 6)
   ])
   model_path = os.path.join("./netmodels", "CNN")
   print("Built CNN.")
