@@ -56,8 +56,8 @@ class DataLoader(object):
                 dic = json.loads(line)
                 data.append(dic[DATA_NAME])
                 label.append(dic[LABEL_NAME])
-        if data_type == "train":
-            data, label = augment_data(data, label)  # 数据增强的地方 只对train数据有效
+        # if data_type == "train":
+        #     data, label = augment_data(data, label)  # 数据增强的地方 只对train数据有效
         length = len(label)
         print(data_type + "_data_length:" + str(length))
         return data, label, length
@@ -68,9 +68,9 @@ class DataLoader(object):
         noise_level = 20
         padded_data = []
         # Before- Neighbour padding
-        print(seq_length, " ", dim)
-        print(data[0])
-        print(len(data))
+        #print(seq_length, " ", dim)
+        #print(data[0])
+        #print(len(data))
         tmp_data = (np.random.rand(seq_length, dim) - 0.5) * noise_level + data[0]
 
         tmp_data[(seq_length -
