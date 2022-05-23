@@ -152,10 +152,10 @@ if __name__ == "__main__":
         name = names[idx1]
         prepare_original_data(folder, name, data,
                               "./%s/output_%s_%s.txt" % (folder, folder, name))
-    for idx in range(5):
-        prepare_original_data("negative", "negative%d" % (idx + 1), data,
-                              "./negative/output_negative_%d.txt" % (idx + 1))
-    generate_negative_data(data)
+    # for idx in range(5):
+    #     prepare_original_data("negative", "negative%d" % (idx + 1), data,
+    #                           "./negative/output_negative_%d.txt" % (idx + 1))
+    # generate_negative_data(data)
     print("data_length: " + str(len(data)))  # data是一个list，里面每一个单位是一份完整的手势数据
     if not os.path.exists("./data"):
         os.makedirs("./data")

@@ -53,7 +53,7 @@ def split_data(data, train_ratio, valid_ratio):  # pylint: disable=redefined-out
     train_data = []  # pylint: disable=redefined-outer-name
     valid_data = []  # pylint: disable=redefined-outer-name
     test_data = []  # pylint: disable=redefined-outer-name
-    num_dic = {"lyl": 0, "xzy": 0, "xmh": 0, "ljr": 0, "mxd": 0, "negative": 0}  # TODO[5、6] 修改data_split的手势标签
+    num_dic = {"lyl": 0, "xzy": 0, "xmh": 0, "ljr": 0, "mxd": 0}  # TODO[5、6] 修改data_split的手势标签
     for idx, item in enumerate(data):  # pylint: disable=unused-variable
         for i in num_dic:
             if item["gesture"] == i:

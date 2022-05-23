@@ -38,7 +38,7 @@ class DataLoader(object):
                  seq_length):
         self.dim = 3
         self.seq_length = seq_length
-        self.label2id = {"lyl": 0, "xzy": 1, "xmh": 2, "ljr": 3, "mxd": 4, "negative": 5}  # TODO[8] 修改手势标签
+        self.label2id = {"lyl": 0, "xzy": 1, "xmh": 2, "ljr": 3, "mxd": 4}  # TODO[8] 修改手势标签
         self.train_data, self.train_label, self.train_len = self.get_data_file(
             train_data_path, "train")
         self.valid_data, self.valid_label, self.valid_len = self.get_data_file(
