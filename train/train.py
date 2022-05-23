@@ -121,8 +121,8 @@ def train_net(
         kind):
     """Trains the model."""
     calculate_model_size(model)
-    epochs = 500  # TODO[14] 配置参数：优化器、损失值、度量指标、epoch、batch_size
-    batch_size = 10
+    epochs = 100  # TODO[14] 配置参数：优化器、损失值、度量指标、epoch、batch_size
+    batch_size = 64
     model.compile(optimizer="adam",
                   loss="sparse_categorical_crossentropy",
                   metrics=["accuracy"])
@@ -141,7 +141,7 @@ def train_net(
     model.fit(train_data,
               epochs=epochs,
               validation_data=valid_data,
-              steps_per_epoch=int((train_len - 1) / batch_size + 1),  # 可以修改，即一次epoch训练多少个batch
+              steps_per_epoch=100,  # 可以修改，即一次epoch训练多少个batch
               validation_steps=int((valid_len - 1) / batch_size + 1),
               callbacks=[tensorboard_callback])
     loss, acc = model.evaluate(test_data)
