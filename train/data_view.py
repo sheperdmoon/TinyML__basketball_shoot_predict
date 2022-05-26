@@ -11,11 +11,11 @@ files = ["shoot/output_shoot_linyl.txt",
          "shoot/output_shoot_xumh.txt",
          "shoot/output_shoot_liujr.txt",
          "shoot/output_shoot_maxd.txt"]
-files_test = ["test/output_shoot_linyl.txt",
-              "test/output_shoot_xuzy.txt",
-              "test/output_shoot_xumh.txt",
-              "test/output_shoot_liujr.txt",
-              "test/output_shoot_maxd.txt"]
+files_test = ["lyl/output_lyl_linyl.txt",
+              "xzy/output_xzy_xuzy.txt",
+              "xmh/output_xmh_xumh.txt",
+              "ljr/output_ljr_liujr.txt",
+              "mxd/output_mxd_maxd.txt"]
 names = ["lyl", "xzy", "xmh", "ljr", "mxd"]
 names1 = ["mw1", "mw2", "mw3"]
 
@@ -92,16 +92,16 @@ def fc(data_whole):
     for i in range(len(data_whole)):
         sum = 0
         data_ = data_whole[i]
-        #print(len(data_whole[0]))
-        #print(len(data_whole[0][0]))
+        # print(len(data_whole[0]))
+        # print(len(data_whole[0][0]))
         minn = 1000
         for i in range(len(data_whole[0])):
-            minn = min(len(data_whole[0][i]),minn)
-        data_t = [[data_[i][j]/1000 for i in range(len(data_whole[0]))] for j in range(minn)]
+            minn = min(len(data_whole[0][i]), minn)
+        data_t = [[data_[i][j] / 1000 for i in range(len(data_whole[0]))] for j in range(minn)]
         for arr in data_t:
             arr_var = np.var(arr)
             sum += arr_var
-        fc_whole.append(sum/minn)
+        fc_whole.append(sum / minn)
     return fc_whole
 
 
@@ -149,15 +149,25 @@ def show(file2, who):
         file_dst.write(src_tmp)
 
 
-def show_origin(file2,who):
+def show_origin(file2, who):
     data_whole = [[], [], []]
     for index_now in range(3):
         data_whole[index_now] = get_split(file2, index_now)
     graph(who, "test/", data_whole[0], data_whole[1], data_whole[2])
-    fc_ = fc(data_whole)
-    print("x方差", fc_[0])
-    print("y方差", fc_[1])
-    print("z方差", fc_[2])
+    # fc_ = fc(data_whole)
+    # print("x方差", fc_[0])
+    # print("y方差", fc_[1])
+    # print("z方差", fc_[2])
+
+
+def show_merge():
+    data_whole = [[], [], [], [], []]
+    for index_now in range(5):
+        data_whole[index_now] = get_split(files_test[index_now], 0)
+    for people in data_whole[1:2]:
+        for xx in people:
+            x_alias = list(range(1, len(xx) + 1))
+            draw("check_merge", x_alias, xx)
 
 #
 # show_origin("former/output_wing_hyw.txt",0)
@@ -165,5 +175,6 @@ def show_origin(file2,who):
 # show_origin("former/output_wing_jiangyh.txt",2)
 # show_origin("former/output_wing_liucx.txt")
 # show_origin("former/output_wing_lsj.txt")
-
+show_origin(files_test[4],4)
+show_merge()
 # show_origin("shoot/output_shoot_linyl.txt")
