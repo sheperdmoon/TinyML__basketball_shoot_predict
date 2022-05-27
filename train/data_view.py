@@ -163,18 +163,18 @@ def show_origin(file2, who):
 def show_merge():
     data_whole = [[], [], [], [], []]
     for index_now in range(5):
-        data_whole[index_now] = get_split(files_test[index_now], 0)
-    for people in data_whole[1:2]:
+        data_whole[index_now] = get_split(files_test[index_now], 1)
+    for people in data_whole[1:3]:
         for xx in people:
             x_alias = list(range(1, len(xx) + 1))
             draw("check_merge", x_alias, xx)
-
+            break
 #
 # show_origin("former/output_wing_hyw.txt",0)
 # show_origin("former/output_wing_dengyl.txt",1)
 # show_origin("former/output_wing_jiangyh.txt",2)
 # show_origin("former/output_wing_liucx.txt")
 # show_origin("former/output_wing_lsj.txt")
-show_origin(files_test[4],4)
+# show_origin(files_test[4],4)
 show_merge()
 # show_origin("shoot/output_shoot_linyl.txt")

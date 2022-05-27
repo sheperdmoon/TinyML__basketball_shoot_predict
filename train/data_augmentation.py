@@ -69,4 +69,7 @@ def augment_data(original_data, original_label):
       new_data.append(
           (np.array(data, dtype=np.float32) * molecule / denominator).tolist())
       new_label.append(label)
-  return new_data, new_label
+
+
+
+
