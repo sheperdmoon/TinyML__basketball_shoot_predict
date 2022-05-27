@@ -122,7 +122,7 @@ def train_net(
     """Trains the model."""
     calculate_model_size(model)
     epochs = 200  # TODO[14] 配置参数：优化器、损失值、度量指标、epoch、batch_size
-    batch_size = 64
+    batch_size = 32
     model.compile(optimizer="adam",
                   loss="sparse_categorical_crossentropy",
                   metrics=["accuracy"])
