@@ -76,20 +76,20 @@ def augment_data(original_data,title):
             new_data.append(tmp_data)
         # Time warping
         fractions = [(3, 2), (5, 3), (2, 3), (3, 4), (9, 5), (6, 5), (4, 5)]
-        for molecule, denominator in fractions:
-            new_data.append(time_wrapping(molecule, denominator, data))
+        # for molecule, denominator in fractions:
+        #     new_data.append(time_wrapping(molecule, denominator, data))
 
         # Movement amplification
         for molecule, denominator in fractions:
             new_data.append(
                 (np.array(data, dtype=np.float32) * molecule / denominator).tolist())
 
-    for item1 in aug_data[0:7]:
+    for item1 in new_data:
         xlist = []
         for item2 in item1:
             xlist.append(item2[0])
         x_alias = list(range(1, len(xlist) + 1))
-        draw("check_augment_x_ss"+title, x_alias, xlist)
+        draw("check_augment_x"+title, x_alias, xlist)
 
 
 
