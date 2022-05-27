@@ -61,9 +61,9 @@ def augment_data(original_data, original_label):
       new_label.append(label)
     # Time warping
     fractions = [(3, 2), (5, 3), (2, 3), (3, 4), (9, 5), (6, 5), (4, 5)]
-    for molecule, denominator in fractions:
-      new_data.append(time_wrapping(molecule, denominator, data))
-      new_label.append(label)
+    # for molecule, denominator in fractions:
+    #   new_data.append(time_wrapping(molecule, denominator, data))
+    #   new_label.append(label)
     # Movement amplification
     for molecule, denominator in fractions:
       new_data.append(
