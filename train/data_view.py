@@ -75,15 +75,15 @@ def write2exl(file_path, first_line, datas):
 
 
 # 余弦相似性
-def cos_similarity():
-    s = cosine_similarity(data_x)
-    write2exl("./data_x_cosin.xlsx", s)
+def cos_similarity(data_1, data_2,name):
+    s = cosine_similarity(data_1,data_2)
+    write2exl(name, list(range(0,3)),s)
 
 
 # 欧氏距离
 def dis():
     distAB = cdist(data_x, data_x, metric='euclidean')
-    write2exl("./data_x_dis.xlsx", distAB)
+    write2exl("./data_x_dis.xlsx",distAB)
 
 
 # 求方差
@@ -169,12 +169,23 @@ def show_merge():
             x_alias = list(range(1, len(xx) + 1))
             draw("check_merge", x_alias, xx)
             break
+
+
 #
 # show_origin("former/output_wing_hyw.txt",0)
 # show_origin("former/output_wing_dengyl.txt",1)
 # show_origin("former/output_wing_jiangyh.txt",2)
 # show_origin("former/output_wing_liucx.txt")
 # show_origin("former/output_wing_lsj.txt")
-# show_origin(files_test[4],4)
-show_merge()
-# show_origin("shoot/output_shoot_linyl.txt")
+# show_origin(files_test[3], 3)
+# show_merge()
+# show_origin("xmhorigin.txt",2)
+data_1 = []
+data_2 = []
+data_1 = get_split("origin/ljr.txt", 1)
+data_1.extend(get_split("origin/mxd.txt", 1))
+data_1.extend(get_split("origin/lyl.txt", 1))
+data_1.extend(get_split("origin/xzy.txt", 1))
+data_1.extend(get_split("origin/xmh.txt", 1))
+
+cos_similarity(np.array(data_1).reshape(-1,40),np.array(data_1).reshape(-1,40),"ljr&xmh_cosine.xlsx")

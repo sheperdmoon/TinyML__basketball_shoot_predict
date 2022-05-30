@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import random
 
-path = "./data/1-mxd.txt"
+path = "ljrorigin.txt"
 file = open(path, 'r')
 strings = []
 for string in file.readlines():
