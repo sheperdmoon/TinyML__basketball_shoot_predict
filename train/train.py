@@ -49,17 +49,18 @@ def calculate_model_size(model):
 
 def build_cnn(seq_length):  # TODO[13] 修改模型
     """Builds a convolutional neural network in Keras."""
+    print("wowg")
     model = tf.keras.Sequential([
         tf.keras.layers.Conv2D(
             8, (2, 3),
             padding="same",
             activation="relu",
             input_shape=(seq_length, 3, 1)),  # output_shape=(batch, 64, 3, 8)
-        tf.keras.layers.MaxPool2D((3, 3)),  # (batch, 21, 1, 8)
+        tf.keras.layers.MaxPool2D((2, 3)),  # (batch, 21, 1, 8)
         tf.keras.layers.Dropout(0.1),  # (batch, 21, 1, 8)
-        tf.keras.layers.Conv2D(16, (3, 1), padding="same",
+        tf.keras.layers.Conv2D(16, (2, 1), padding="same",
                                activation="relu"),  # (batch, 21, 1, 16)
-        tf.keras.layers.MaxPool2D((3, 1), padding="same"),  # (batch, 22, 1, 16)
+        tf.keras.layers.MaxPool2D((2, 1), padding="same"),  # (batch, 22, 1, 16)
         tf.keras.layers.Dropout(0.1),  # (batch, 7, 1, 16)
         tf.keras.layers.Flatten(),  # (batch, 112)
         tf.keras.layers.Dense(16, activation="relu"),  # (batch, 16)
