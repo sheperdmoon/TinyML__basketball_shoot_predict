@@ -38,8 +38,8 @@ DATA_NAME = "accel_ms2_xyz"
 # folders = ["lyl", "xzy", "xmh", "ljr", "mxd"]
 folders = ["lyl", "xzy", "xmh", "lm"]
 
-# names = [   "linyl", "xuzy", "xumh", "liujr", "maxd"]
-names = [   "linyl", "xuzy", "xumh", "lium"]
+names = [   "linyl", "xuzy", "xumh", "liujr", "maxd"]
+# names = [   "linyl", "xuzy", "xumh", "lium"]
 
 
 def prepare_original_data(folder, name, data, file_to_read):  # pylint: disable=redefined-outer-name
