@@ -81,9 +81,9 @@ def cos_similarity(data_1, data_2,name):
 
 
 # 欧氏距离
-def dis():
-    distAB = cdist(data_x, data_x, metric='euclidean')
-    write2exl("./data_x_dis.xlsx",distAB)
+def dis(data_x):
+    distAB = cdist(data_x,data_x,metric='euclidean')
+    write2exl("./data_x_dis.xlsx",[1,2],distAB)
 
 
 # 求方差
@@ -189,3 +189,4 @@ data_1.extend(get_split("origin/xzy.txt", 1))
 data_1.extend(get_split("origin/xmh.txt", 1))
 
 cos_similarity(np.array(data_1).reshape(-1,40),np.array(data_1).reshape(-1,40),"ljr&xmh_cosine.xlsx")
+dis(data_1)

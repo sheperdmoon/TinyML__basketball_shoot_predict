@@ -65,7 +65,7 @@ def build_cnn(seq_length):  # TODO[13] 修改模型
         tf.keras.layers.Flatten(),  # (batch, 112)
         tf.keras.layers.Dense(16, activation="relu"),  # (batch, 16)
         tf.keras.layers.Dropout(0.1),  # (batch, 16)
-        tf.keras.layers.Dense(4, activation="softmax")  # (batch, 6)
+        tf.keras.layers.Dense(5, activation="softmax")  # (batch, 6)
     ])
     model_path = os.path.join("./netmodels", "CNN")
     print("Built CNN.")
@@ -149,7 +149,7 @@ def train_net(
     pred = np.argmax(model.predict(test_data), axis=1)
     confusion = tf.math.confusion_matrix(labels=tf.constant(test_labels),
                                          predictions=tf.constant(pred),
-                                         num_classes=4)  # TODO[12]评估矩阵，要改这个num_classes
+                                         num_classes=5)  # TODO[12]评估矩阵，要改这个num_classes
     print(confusion)
     print("Loss {}, Accuracy {}".format(loss, acc))
     # Convert the model to the TensorFlow Lite format without quantization
