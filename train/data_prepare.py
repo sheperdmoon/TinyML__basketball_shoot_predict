@@ -35,10 +35,10 @@ import random
 
 LABEL_NAME = "gesture"
 DATA_NAME = "accel_ms2_xyz"
-# folders = ["lyl", "xzy", "xmh", "ljr", "mxd"]
-folders = ["lyl", "xzy", "xmh", "lm"]
+folders = ["lyl", "xzy", "xmh", "ljr", "mxd"]
+# folders = ["lyl", "xzy", "xmh", "lm"]
 
-names = [   "linyl", "xuzy", "xumh", "liujr", "maxd"]
+names = ["linyl", "xuzy", "xumh", "liujr", "maxd"]
 # names = [   "linyl", "xuzy", "xumh", "lium"]
 
 
