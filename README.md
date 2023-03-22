@@ -14,4 +14,5 @@ output：1——5，表示检验到了哪个人的投篮姿势
 https://user-images.githubusercontent.com/88827567/226861940-4cd06a96-2184-48b0-9e13-c78a5cdaa173.mp4
 
 ![image](https://user-images.githubusercontent.com/88827567/226862016-e95508f2-d078-474f-9e23-37a2a06212e9.png)
-![image](https://user-images.githubusercontent.com/88827567/226862026-f7283657-7cfa-404a-847e-fd9481807291.png)
+
+![图片1](https://user-images.githubusercontent.com/88827567/226862374-3604b340-0c66-4d4e-b9dd-02b64599d589.png)
